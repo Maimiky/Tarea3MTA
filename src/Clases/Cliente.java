@@ -11,7 +11,7 @@ package Clases;
  * @author AbelSanz
  */
 public class Cliente {
-
+//hola como estannnnnnnnnnnnnnn
     protected String nombre;
     protected String apellido;
     protected int edad;
