@@ -11,11 +11,21 @@ package Clases;
  */
 public class Mascota {
      protected String nombreClient;
-    protected String NombreMascot;
-    protected String  raza;
-    protected String  color;
-    protected String peso;
-    protected String sexo;
+     protected String Dni;
+     protected String NombreMascot;
+     protected String  raza;
+     protected String  color;
+     protected String peso;
+     protected String sexo;
+    
+
+    public String getDni() {
+        return Dni;
+    }
+
+    public void setDni(String Dni) {
+        this.Dni = Dni;
+    }
 
     public String getNombreClient() {
         return nombreClient;
