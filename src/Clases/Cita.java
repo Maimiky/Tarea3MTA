@@ -12,14 +12,14 @@ import java.util.*;
  * @author -Katerin-
  */
 public abstract class Cita {
-    ArrayList Nombre;
-    ArrayList Apelllido;
-    ArrayList HistorialClinico;
-    ArrayList Telefono;
-    ArrayList Sintomas;
-    ArrayList Correo;
-    ArrayList NombreMascota;
-    ArrayList Especie;
+    private ArrayList Nombre;
+    private ArrayList Apelllido;
+   private ArrayList HistorialClinico;
+   private ArrayList Telefono;
+   private ArrayList Sintomas;
+   private ArrayList Correo;
+   private ArrayList NombreMascota;
+    private ArrayList Especie;
     
     //INSERTAR CONSTRUCTOR
 
@@ -101,6 +101,9 @@ public abstract class Cita {
     public void setEspecie(ArrayList Especie) {
         this.Especie = Especie;
     }
+
+ 
+
     
     //INGRESAMOS LOS METODOS QUE VAMOS A CREAR
     

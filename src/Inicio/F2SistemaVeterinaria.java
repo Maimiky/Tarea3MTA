@@ -269,8 +269,8 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        F6Mascota Cc = new F6Mascota();
-     Cc.setVisible(true);
+        F6Mascota Cy = new F6Mascota();
+     Cy.setVisible(true);
             dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
