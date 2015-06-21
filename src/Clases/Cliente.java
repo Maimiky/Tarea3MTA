@@ -8,7 +8,7 @@ package Clases;
 
 /**
  *
- * @author AbelSanz
+ * @author Jim Soria
  */
 public class Cliente {
 //hola como estannnnnnnnnnnnnnn
