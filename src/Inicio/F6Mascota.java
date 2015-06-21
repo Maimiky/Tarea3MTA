@@ -325,7 +325,7 @@ public class F6Mascota extends javax.swing.JFrame {
         int eliminarDatos = tblMascota.getSelectedRow();
         if (eliminarDatos >= 0) {
             modelo.removeRow(eliminarDatos);
-            dispose();
+//            dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un dato del cuadro :-P");
 

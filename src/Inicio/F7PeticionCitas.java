@@ -121,7 +121,7 @@ public class F7PeticionCitas extends javax.swing.JFrame {
         if(txtEscoger.getText().equalsIgnoreCase(Regist)){
             F5Registrados fr = new F5Registrados();
             fr.setVisible(true);
-            dispose();
+//            dispose();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 

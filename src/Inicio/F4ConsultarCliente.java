@@ -80,7 +80,7 @@ public class F4ConsultarCliente extends javax.swing.JFrame {
         if(txtConsultar.getText().equalsIgnoreCase(Regist)){
             F5Registrados fr = new F5Registrados();
             fr.setVisible(true);
-            dispose();
+//            dispose();
             
         
         }else{
