@@ -171,7 +171,11 @@ public class F1IniciarCuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
-   String Usuario = "admin";
+
+    }//GEN-LAST:event_btnEntrarMouseClicked
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+     String Usuario = "admin";
    String Contraseña = "123";
    String pass= new  String(Password.getPassword());
    
@@ -182,12 +186,8 @@ public class F1IniciarCuenta extends javax.swing.JFrame {
       
    }
    else {
-       JOptionPane.showMessageDialog(null,"entrada incorrecta ingresa bien inbecil.-P");
-   }
-    }//GEN-LAST:event_btnEntrarMouseClicked
-
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null,"ERROR EN LA CONTRASEÑA/USUARIO");
+   }   // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
