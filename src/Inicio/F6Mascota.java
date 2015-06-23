@@ -255,7 +255,9 @@ public class F6Mascota extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnSalirActionPerformed
-    System.exit(0);
+       dispose();
+         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+     
     }//GEN-LAST:event_bnSalirActionPerformed
 
     private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed

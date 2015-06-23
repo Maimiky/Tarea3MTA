@@ -34,6 +34,7 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
         fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
         dispose();
+       //////// setExtendedState(MAXIMIZED_BOTH);-------
         
     }
     
@@ -185,6 +186,11 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
 
         jMenuItem18.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem18.setText("CONSULTAR ANIMAL");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
         jMenu11.add(jMenuItem18);
 
         jMenuBar1.add(jMenu11);
@@ -257,14 +263,15 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
 
         F3Cliente CC = new F3Cliente(); //jframe seleccionado
         CC.setVisible(true);// para comprovar el acceso al jframe seleccionado y entrar
-         dispose();    //para que el jFrame actual se cierre automáticamente y se abre la siguiente
-      
+//         dispose();    //para que el jFrame actual se cierre automáticamente y se abre la siguiente
+//      setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_insertarActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
      F4ConsultarCliente Cc = new F4ConsultarCliente();
      Cc.setVisible(true);
 //            dispose();
+//     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
@@ -272,11 +279,20 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
         F6Mascota Cy = new F6Mascota();
      Cy.setVisible(true);
 //            dispose();
+//     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+ 
+        F9consultarMascota Fcm= new F9consultarMascota();
+        Fcm.setVisible(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -313,6 +313,7 @@ public class F3Cliente extends javax.swing.JFrame {
          txtTelefono.setText("");
          txtDireccion.setText("");
         // JOptionPane.showMessageDialog(null,"Se registró Alumno correctamente");// para el mensaje
+//         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_btnAdicionarClienteActionPerformed
 
     private void tblDatosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblDatosAncestorAdded
@@ -330,9 +331,8 @@ public class F3Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        F2SistemaVeterinaria fv = new F2SistemaVeterinaria();
-        fv.setVisible(true);
         dispose();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
