@@ -6,7 +6,8 @@
 package Inicio;
 
 import Clases.Cliente;
-import Clases.Conectar;
+import Clases.PersistenciaCliente;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -19,19 +20,20 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author AbelSanz
+ * @author AbelSanz 
  */
 public class F3Cliente extends javax.swing.JFrame {
 
-    DefaultListModel listModel = new DefaultListModel();
-    ArrayList<Cliente> cliente = new ArrayList<Cliente>();
+   // 2 DefaultListModel listModel = new DefaultListModel();
+ //  2 ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 
     DefaultTableModel modelo = new DefaultTableModel();
 
     public F3Cliente() {
         initComponents();
-        tblDatos.getColumnCount();
-        modelo = (DefaultTableModel) tblDatos.getModel();
+        LLenarJTable();
+       // tblDatos.getColumnCount();
+      ///modelo = (DefaultTableModel) tblDatos.getModel();
     }
 
     @SuppressWarnings("unchecked")
@@ -257,7 +259,7 @@ public class F3Cliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarClienteActionPerformed
-
+         ArrayList<Cliente> listado= PersistenciaCliente.LoadData();
          Cliente C = new Cliente();
          C.setNombre(txtNombre.getText());
          C.setApellido(txtApellido.getText());
@@ -267,55 +269,41 @@ public class F3Cliente extends javax.swing.JFrame {
          C.setDNI(txtDni.getText());
          C.setTelefono(txtTelefono.getText());
          C.setDireccion(txtDireccion.getText());
-        
-        //para enlazar con la clase Conectar...y enviarle al wampserver
-        Conectar con = new Conectar();
-        Connection reg = con.conexion();
-        String nom, ape, dir, tel, dni;
-        int edad;
-        String sql;
+         
+         listado.add(C);
+         PersistenciaCliente.SaveData(listado);
+         LimpiarJTable();
+         LLenarJTable();
 
-        nom = txtNombre.getText();
-        ape = txtApellido.getText();
-        tel = txtTelefono.getText();
-        dir = txtDireccion.getText();
-        dni = txtDni.getText();
-        edad = (Integer) spEdad.getValue();
-
-        sql = "INSERT INTO cliente (cli_nombre,cli_apellido,cli_edad,cli_dni,cli_telefono,cli_direccion)VALUES(?,?,?,?,?,?)";
-        try {
-            PreparedStatement pst = reg.prepareStatement(sql);
-            pst.setString(1, nom);
-            pst.setString(2, ape);
-            pst.setInt(3, edad);
-            pst.setString(4, dni);
-            pst.setString(5, tel);
-            pst.setString(6, dir);
-
-            int n = pst.executeUpdate();
-            if (n > 0) {
-                JOptionPane.showMessageDialog(null, "REGISTRADO CORRECTAMENTE");
-
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(F3Cliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //hasta akí vamos a enviar al wampServer
-
-         modelo.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(),C.getDNI(),C.getTelefono(),C.getDireccion()});
+        /* modelo.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(),C.getDNI(),C.getTelefono(),C.getDireccion()});
          //Esto es para borrar los datos ingresados
-         listModel.clear();
+        //2 listModel.clear();
          spEdad.setValue(0);
          txtNombre.setText("");
          txtApellido.setText("");
          txtDni.setText("");
          txtTelefono.setText("");
-         txtDireccion.setText("");
-        // JOptionPane.showMessageDialog(null,"Se registró Alumno correctamente");// para el mensaje
-//         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_btnAdicionarClienteActionPerformed
+         txtDireccion.setText("");*/
+         JOptionPane.showMessageDialog(null,"Se registró Alumno correctamente");// para el mensaje
 
+    }//GEN-LAST:event_btnAdicionarClienteActionPerformed
+void LimpiarJTable(){
+  DefaultTableModel df = ((DefaultTableModel)tblDatos.getModel());
+  int a = df.getRowCount() -1;
+  for (int i = a; i >=0; i--){
+      df.removeRow(i);
+  }
+}
+void LLenarJTable(){
+    
+    ArrayList<Cliente> lista = PersistenciaCliente.LoadData();
+    DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
+    for(Cliente C : lista){
+    df.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(),C.getDNI(),C.getTelefono(),C.getDireccion()});
+    }
+}
+    
+    
     private void tblDatosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblDatosAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_tblDatosAncestorAdded
@@ -325,7 +313,7 @@ public class F3Cliente extends javax.swing.JFrame {
         if (eliminarDatos >= 0) {
             modelo.removeRow(eliminarDatos);
         } else {
-            JOptionPane.showMessageDialog(null, "Selecciona un dato del cuadro INBECIL :-P");
+            JOptionPane.showMessageDialog(null, "Selecciona un dato del cuadro :-P");
 
         }
     }//GEN-LAST:event_btnEliminarActionPerformed

@@ -5,12 +5,14 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author Jim Soria
  */
-public class Cliente {
+public class Cliente  implements  Serializable{
 //hola como estannnnnnnnnnnnnnn
     protected String nombre;
     protected String apellido;

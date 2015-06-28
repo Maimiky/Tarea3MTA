@@ -5,7 +5,6 @@
  */
 package Inicio;
 
-import Clases.Conectar;
 import Clases.Mascota;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -269,44 +268,6 @@ public class F6Mascota extends javax.swing.JFrame {
     m.setColor(txtColor.getText());
     m.setPeso(txtPeso.getText());
     m.setSexo((String)cbSexo.getSelectedItem());
-    
-    
-    
-        Conectar con = new Conectar();
-        Connection reg = con.conexion();
-        String cli, dni, mas, ras,col,peso,sex;
-       
-        String sql;
-
-        cli = txtCliente.getText();
-        dni = txtDni.getText();
-        mas = txtMascota.getText();
-        ras = txtRaza.getText();
-        col = txtColor.getText();
-        //ras = (String)cbRaza.getSelectedItem();
-        peso = txtPeso.getText();
-        sex = (String)cbSexo.getSelectedItem();
-
-        sql = "INSERT INTO mascota (cli_nombre,cli_dni,mas_nombre,mas_raza,mas_color,mas_peso,mas_sexo)VALUES(?,?,?,?,?,?,?)";
-        try {
-            PreparedStatement pst = reg.prepareStatement(sql);
-            pst.setString(1, cli);
-            pst.setString(2, dni);
-            pst.setString(3,mas);
-            pst.setString(4, ras);
-            pst.setString(5, col);
-            pst.setString(6, peso);
-            pst.setString(7, sex);
-
-            int n = pst.executeUpdate();
-            if (n > 0) {
-                JOptionPane.showMessageDialog(null, "REGISTRADO CORRECTAMENTE");
-
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(F3Cliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
     
    // m.setSexo(jbMasculino.setSelected(false));
     
