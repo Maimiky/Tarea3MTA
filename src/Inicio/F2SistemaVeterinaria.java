@@ -6,7 +6,7 @@
 package Inicio;
 
 
-import Inicio.F3Cliente;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;

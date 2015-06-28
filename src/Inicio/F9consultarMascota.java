@@ -74,6 +74,7 @@ public class F9consultarMascota extends javax.swing.JFrame {
 
         jLabel3.setText("Peso de la mascota ");
 
+        quilogramo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         quilogramo.setText("/ Kg");
 
         cnbServicios.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un servicio", "Cirujia Menor", "Cortes de Uña", "Desparacitacion", "Vacunacion ", "Mantenimiento de Pelaje", " " }));
@@ -180,7 +181,7 @@ public class F9consultarMascota extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(quilogramo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

@@ -7,13 +7,7 @@ package Inicio;
 
 import Clases.Cliente;
 import Clases.PersistenciaCliente;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -28,6 +22,7 @@ public class F3Cliente extends javax.swing.JFrame {
  //  2 ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 
     DefaultTableModel modelo = new DefaultTableModel();
+    DefaultListModel listModel = new DefaultListModel();
 
     public F3Cliente() {
         initComponents();
@@ -275,15 +270,14 @@ public class F3Cliente extends javax.swing.JFrame {
          LimpiarJTable();
          LLenarJTable();
 
-        /* modelo.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(),C.getDNI(),C.getTelefono(),C.getDireccion()});
-         //Esto es para borrar los datos ingresados
-        //2 listModel.clear();
-         spEdad.setValue(0);
+         //para limpiar los datos ingresados
+         listModel.clear();
          txtNombre.setText("");
          txtApellido.setText("");
+         spEdad.setValue(0);
          txtDni.setText("");
          txtTelefono.setText("");
-         txtDireccion.setText("");*/
+         txtDireccion.setText("");
          JOptionPane.showMessageDialog(null,"Se registró Alumno correctamente");// para el mensaje
 
     }//GEN-LAST:event_btnAdicionarClienteActionPerformed
