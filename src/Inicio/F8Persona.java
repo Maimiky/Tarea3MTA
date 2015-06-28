@@ -5,15 +5,22 @@
  */
 package Inicio;
 
+import Clases.Cliente;
+import Clases.PersistenciaCliente;
+import Clases.PersistenciaPersona;
+import Clases.Persona;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author lokitta
  */
 public class F8Persona extends javax.swing.JFrame {
-
-    /**
-     * Creates new form F8Persona
-     */
+ DefaultTableModel modelo = new DefaultTableModel();
+    DefaultListModel listModel = new DefaultListModel();
     public F8Persona() {
         initComponents();
     }
@@ -59,9 +66,25 @@ public class F8Persona extends javax.swing.JFrame {
 
         lblDireccion.setText("Direccion");
 
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
         btnInsertar.setText("Insertar Persona");
+        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,6 +112,11 @@ public class F8Persona extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblDatos);
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,6 +205,57 @@ public class F8Persona extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
+       ArrayList<Persona> listado= PersistenciaPersona.LoadData();
+         Persona C = new Persona();
+         C.setNombre(txtNombre.getText());
+         C.setApellido(txtApellido.getText());
+         /*int edad1;
+         edad1 = (Integer)spEdad.getValue();*/
+         C.setEdad((int)spEdad.getValue());
+         C.setDNI(txtDni.getText());
+         C.setTelefono(txtTelefono.getText());
+         C.setDireccion(txtDireccion.getText());
+         
+         listado.add(C);
+         PersistenciaPersona.SaveData(listado);
+         LimpiarJTable();
+         LLenarJTable();
+
+         //para limpiar los datos ingresados
+         listModel.clear();
+         txtNombre.setText("");
+         txtApellido.setText("");
+         spEdad.setValue(0);
+         txtDni.setText("");
+         txtTelefono.setText("");
+         txtDireccion.setText("");
+         JOptionPane.showMessageDialog(null,"Se registró persona");// para el mensaje
+ // TODO add your handling code here:
+    }//GEN-LAST:event_btnInsertarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+int eliminarDatos = tblDatos.getSelectedRow();
+        if (eliminarDatos >= 0) {
+            modelo.removeRow(eliminarDatos);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona un dato del cuadro :-P");
+
+        }
+
+
+
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,4 +310,20 @@ public class F8Persona extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+
+    private void LimpiarJTable() {
+        DefaultTableModel df = ((DefaultTableModel)tblDatos.getModel());
+  int a = df.getRowCount() -1;
+  for (int i = a; i >=0; i--){
+      df.removeRow(i);
+  }
+    }
+
+    private void LLenarJTable() {
+        ArrayList<Persona> lista = PersistenciaPersona.LoadData();
+    DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
+    for(Persona C : lista){
+    df.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(),C.getDNI(),C.getTelefono(),C.getDireccion()});
+    }
+    }
 }
