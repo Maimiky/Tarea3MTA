@@ -8,7 +8,6 @@ package JFrames;
 import Clases.Cliente;
 import Clases.PersistenciaCliente;
 
-import Inicio.F6Mascota;
 import Inicio.F8Persona;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
@@ -329,9 +328,9 @@ void LLenarJTable(){
     private void btnInsertarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarAnimalActionPerformed
         int seleccionar = tblDatos.getSelectedRow();
         if (seleccionar >= 0) {
-            F6Mascota F6 = new F6Mascota();
+            F7InsertarMascota F6 = new F7InsertarMascota();
             F6.setVisible(true);
-            dispose();
+            
 
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un cliente para insertar mascotas");

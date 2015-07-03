@@ -10,6 +10,8 @@ package Inicio;
 import JFrames.F1InsertarCliente;
 import JFrames.F2EliminarCliente;
 import JFrames.F3consultarCliente;
+import JFrames.F7InsertarMascota;
+import JFrames.F8EliminarMascota;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -315,11 +317,10 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsultarClienteActionPerformed
 
     private void InsertarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarAnimalActionPerformed
-        // TODO add your handling code here:
-        F6Mascota Cy = new F6Mascota();
+          F7InsertarMascota Cy = new  F7InsertarMascota();
      Cy.setVisible(true);
-//            dispose();
-//     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+     Escritorio.add(Cy);
+
     }//GEN-LAST:event_InsertarAnimalActionPerformed
 
     private void ConsultarFechaVacunacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFechaVacunacionActionPerformed
@@ -363,8 +364,9 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsultarPersonaActionPerformed
 
     private void EliminarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarAnimalActionPerformed
-     F6Mascota Cy = new F6Mascota();
-     Cy.setVisible(true);       
+   F8EliminarMascota y = new F8EliminarMascota();
+     y.setVisible(true);   
+     Escritorio.add(y);     
     }//GEN-LAST:event_EliminarAnimalActionPerformed
 
     private void InsertarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarCitasActionPerformed

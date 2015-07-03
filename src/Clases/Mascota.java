@@ -5,11 +5,13 @@
  */
 package Clases;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nixia
  */
-public class Mascota {
+public class Mascota implements  Serializable{
      protected String nombreClient;
      protected String Dni;
      protected String NombreMascot;
