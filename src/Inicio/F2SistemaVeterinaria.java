@@ -405,7 +405,7 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     private javax.swing.JMenuItem EliminarAnimal;
     private javax.swing.JMenuItem EliminarCliente;
     private javax.swing.JMenuItem EliminarPersona;
-    private javax.swing.JDesktopPane Escritorio;
+    public static javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem InsertarAnimal;
     private javax.swing.JMenuItem InsertarCitas;
     private javax.swing.JMenuItem InsertarFechaVacunacion;

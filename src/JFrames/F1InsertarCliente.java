@@ -7,6 +7,7 @@ package JFrames;
 
 import Clases.Cliente;
 import Clases.PersistenciaCliente;
+import Inicio.F2SistemaVeterinaria;
 
 import Inicio.F8Persona;
 import java.util.ArrayList;
@@ -328,8 +329,11 @@ void LLenarJTable(){
     private void btnInsertarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarAnimalActionPerformed
         int seleccionar = tblDatos.getSelectedRow();
         if (seleccionar >= 0) {
-            F7InsertarMascota F6 = new F7InsertarMascota();
-            F6.setVisible(true);
+            F7InsertarMascota F7 = new F7InsertarMascota();
+            F2SistemaVeterinaria.Escritorio.add(F7);
+            F7.toFront();
+            F7.setVisible(true);
+            dispose();
             
 
         } else {
