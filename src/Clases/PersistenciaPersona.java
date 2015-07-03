@@ -11,7 +11,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author lokitta
@@ -19,28 +18,28 @@ import java.util.ArrayList;
 public class PersistenciaPersona {
 
     public static void SaveData(ArrayList<Persona> listado) {
-       
-try {
-            FileOutputStream file=new FileOutputStream("Persona.ser");
-            ObjectOutputStream stream=new ObjectOutputStream(file);
+
+        try {
+            FileOutputStream file = new FileOutputStream("Persona.ser");
+            ObjectOutputStream stream = new ObjectOutputStream(file);
             stream.writeObject(listado);
             stream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-}
-    public static ArrayList<Persona> LoadData(){
-        ArrayList<Persona> listado=null;
+    }
+
+    public static ArrayList<Persona> LoadData() {
+        ArrayList<Persona> listado = null;
         try {
-            FileInputStream file =new FileInputStream("Persona.ser");
-            ObjectInputStream stream=new ObjectInputStream(file);
-            listado=(ArrayList<Persona>)stream.readObject();
+            FileInputStream file = new FileInputStream("Persona.ser");
+            ObjectInputStream stream = new ObjectInputStream(file);
+            listado = (ArrayList<Persona>) stream.readObject();
             stream.close();
         } catch (Exception e) {
             e.printStackTrace();
-            listado=null;
+            listado = null;
         }
-        return (ArrayList<Persona>) ((listado!=null)? listado:new ArrayList<Persona>());
-    }}
-    
-
+          return (listado != null) ? listado : new ArrayList<Persona>();
+    }
+}

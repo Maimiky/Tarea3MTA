@@ -16,28 +16,30 @@ import java.util.ArrayList;
  * @author Lenovo
  */
 public class PersistenciaCliente {
-     public static  void SaveData(ArrayList<Cliente> listCliente){
+
+    public static void SaveData(ArrayList<Cliente> listCliente) {
         try {
-            FileOutputStream file=new FileOutputStream("cliente.ser");
-            ObjectOutputStream stream=new ObjectOutputStream(file);
+            FileOutputStream file = new FileOutputStream("cliente.ser");
+            ObjectOutputStream stream = new ObjectOutputStream(file);
             stream.writeObject(listCliente);
             stream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static ArrayList<Cliente> LoadData(){
-        ArrayList<Cliente> listCliente=null;
+
+    public static ArrayList<Cliente> LoadData() {
+        ArrayList<Cliente> listCliente = null;
         try {
-            FileInputStream file =new FileInputStream("cliente.ser");
-            ObjectInputStream stream=new ObjectInputStream(file);
-            listCliente=(ArrayList<Cliente>)stream.readObject();
+            FileInputStream file = new FileInputStream("cliente.ser");
+            ObjectInputStream stream = new ObjectInputStream(file);
+            listCliente = (ArrayList<Cliente>) stream.readObject();
             stream.close();
         } catch (Exception e) {
             e.printStackTrace();
-            listCliente=null;
+            listCliente = null;
         }
-        return (listCliente!=null)? listCliente:new ArrayList<Cliente>();
+        return (listCliente != null) ? listCliente : new ArrayList<Cliente>();
     }
-    
+
 }

@@ -19,8 +19,10 @@ import javax.swing.table.DefaultTableModel;
  * @author lokitta
  */
 public class F8Persona extends javax.swing.JFrame {
- DefaultTableModel modelo = new DefaultTableModel();
+
+    DefaultTableModel modelo = new DefaultTableModel();
     DefaultListModel listModel = new DefaultListModel();
+
     public F8Persona() {
         initComponents();
     }
@@ -210,43 +212,58 @@ public class F8Persona extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-       ArrayList<Persona> listado= PersistenciaPersona.LoadData();
-         Persona C = new Persona();
-         C.setNombre(txtNombre.getText());
-         C.setApellido(txtApellido.getText());
-         /*int edad1;
+        ArrayList<Persona> listado = PersistenciaPersona.LoadData();
+        Persona C = new Persona();
+        C.setNombre(txtNombre.getText());
+        C.setApellido(txtApellido.getText());
+        /*int edad1;
          edad1 = (Integer)spEdad.getValue();*/
-         C.setEdad((int)spEdad.getValue());
-         C.setDNI(txtDni.getText());
-         C.setTelefono(txtTelefono.getText());
-         C.setDireccion(txtDireccion.getText());
-         
-         listado.add(C);
-         PersistenciaPersona.SaveData(listado);
-         LimpiarJTable();
-         LLenarJTable();
+        C.setEdad((int) spEdad.getValue());
+        C.setDNI(txtDni.getText());
+        C.setTelefono(txtTelefono.getText());
+        C.setDireccion(txtDireccion.getText());
 
-         //para limpiar los datos ingresados
-         listModel.clear();
-         txtNombre.setText("");
-         txtApellido.setText("");
-         spEdad.setValue(0);
-         txtDni.setText("");
-         txtTelefono.setText("");
-         txtDireccion.setText("");
-         JOptionPane.showMessageDialog(null,"Se registró persona");// para el mensaje
- // TODO add your handling code here:
+        listado.add(C);
+        PersistenciaPersona.SaveData(listado);
+        LimpiarJTable();
+        LLenarJTable();
+
+        //para limpiar los datos ingresados
+        listModel.clear();
+        txtNombre.setText("");
+        txtApellido.setText("");
+        spEdad.setValue(0);
+        txtDni.setText("");
+        txtTelefono.setText("");
+        txtDireccion.setText("");
+        JOptionPane.showMessageDialog(null, "Se registró persona");// para el mensaje
+    }
+
+    private void LimpiarJTable() {
+        DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
+        int a = df.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            df.removeRow(i);
+        }
+    }
+
+    private void LLenarJTable() {
+        ArrayList<Persona> lista = PersistenciaPersona.LoadData();
+        DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
+        for (Persona C : lista) {
+            df.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(), C.getDNI(), C.getTelefono(), C.getDireccion()});
+        }
+
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-int eliminarDatos = tblDatos.getSelectedRow();
+        int eliminarDatos = tblDatos.getSelectedRow();
         if (eliminarDatos >= 0) {
             modelo.removeRow(eliminarDatos);
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un dato del cuadro :-P");
 
         }
-
 
 
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -311,19 +328,4 @@ int eliminarDatos = tblDatos.getSelectedRow();
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 
-    private void LimpiarJTable() {
-        DefaultTableModel df = ((DefaultTableModel)tblDatos.getModel());
-  int a = df.getRowCount() -1;
-  for (int i = a; i >=0; i--){
-      df.removeRow(i);
-  }
-    }
-
-    private void LLenarJTable() {
-        ArrayList<Persona> lista = PersistenciaPersona.LoadData();
-    DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
-    for(Persona C : lista){
-    df.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(),C.getDNI(),C.getTelefono(),C.getDireccion()});
-    }
-    }
 }

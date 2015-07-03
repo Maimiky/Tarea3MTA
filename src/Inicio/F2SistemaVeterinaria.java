@@ -7,6 +7,7 @@ package Inicio;
 
 
 
+import Clases.ConsultarPersona;
 import JFrames.F1InsertarCliente;
 import JFrames.F2EliminarCliente;
 import JFrames.F3consultarCliente;
@@ -21,6 +22,7 @@ import javax.swing.ImageIcon;
  * @author Lenovo
  */
 public class F2SistemaVeterinaria extends javax.swing.JFrame {
+    private Object desktopPane;
 
     /**
      * Creates new form SistemaVeterinaria
@@ -358,9 +360,7 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarPersonaActionPerformed
 
     private void ConsultarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarPersonaActionPerformed
-    F10ConsultarPersona cp = new F10ConsultarPersona();
-    cp.setVisible(true);
-    
+   
     }//GEN-LAST:event_ConsultarPersonaActionPerformed
 
     private void EliminarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarAnimalActionPerformed
