@@ -5,8 +5,6 @@
  */
 package Inicio;
 
-import Clases.Cliente;
-import Clases.PersistenciaCliente;
 import Clases.PersistenciaPersona;
 import Clases.Persona;
 import java.util.ArrayList;
@@ -25,6 +23,10 @@ public class F8Persona extends javax.swing.JFrame {
 
     public F8Persona() {
         initComponents();
+        tblPersona.getColumnCount();
+        modelo = (DefaultTableModel) tblPersona.getModel();
+        LLenarJTable();
+        
     }
 
     /**
@@ -51,10 +53,11 @@ public class F8Persona extends javax.swing.JFrame {
         btnInsertar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblDatos = new javax.swing.JTable();
+        tblPersona = new javax.swing.JTable();
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 255, 255));
 
         lblNombre.setText("Nombre");
 
@@ -88,7 +91,8 @@ public class F8Persona extends javax.swing.JFrame {
             }
         });
 
-        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+        tblPersona.setBackground(new java.awt.Color(51, 255, 255));
+        tblPersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -111,7 +115,7 @@ public class F8Persona extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblDatos);
+        jScrollPane2.setViewportView(tblPersona);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +244,7 @@ public class F8Persona extends javax.swing.JFrame {
     }
 
     private void LimpiarJTable() {
-        DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
+        DefaultTableModel df = ((DefaultTableModel) tblPersona.getModel());
         int a = df.getRowCount() - 1;
         for (int i = a; i >= 0; i--) {
             df.removeRow(i);
@@ -249,7 +253,7 @@ public class F8Persona extends javax.swing.JFrame {
 
     private void LLenarJTable() {
         ArrayList<Persona> lista = PersistenciaPersona.LoadData();
-        DefaultTableModel df = ((DefaultTableModel) tblDatos.getModel());
+        DefaultTableModel df = ((DefaultTableModel) tblPersona.getModel());
         for (Persona C : lista) {
             df.addRow(new Object[]{C.getNombre(), C.getApellido(), C.getEdad(), C.getDNI(), C.getTelefono(), C.getDireccion()});
         }
@@ -257,13 +261,8 @@ public class F8Persona extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int eliminarDatos = tblDatos.getSelectedRow();
-        if (eliminarDatos >= 0) {
-            modelo.removeRow(eliminarDatos);
-        } else {
-            JOptionPane.showMessageDialog(null, "Selecciona un dato del cuadro :-P");
-
-        }
+        F5Eliminarpersona f5 =new F5Eliminarpersona();
+        f5.setVisible(true);
 
 
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -320,7 +319,7 @@ public class F8Persona extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JSpinner spEdad;
-    private javax.swing.JTable tblDatos;
+    private javax.swing.JTable tblPersona;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtDni;
