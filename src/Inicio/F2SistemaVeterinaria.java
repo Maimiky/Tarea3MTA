@@ -370,7 +370,7 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarAnimalActionPerformed
 
     private void InsertarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarCitasActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_InsertarCitasActionPerformed
 
     private void InsertarFechaVacunacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarFechaVacunacionActionPerformed
