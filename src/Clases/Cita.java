@@ -5,99 +5,68 @@
  */
 package Clases;
 
-import java.util.*;
+import java.io.Serializable;
 
 /**
  *
- * @author -Katerin-
+ * @author Lenovo
  */
-public abstract class Cita {
-   private String nombreMascota;
-   private int NumeroCita;
-   private String Enfermedad;
-   private String Pago;
-   private int Fecha;
+public class Cita implements Serializable {
+    String nombreMascota;
+    String Cliente;
+    String DNI;
+    String DiaDeCita;
+    String HoraDeCita;
+    String EspecieMascota;
 
-    public Cita(String nombreMascota, int NumeroCita, String Enfermedad, String Pago, int Fecha) {
-        this.nombreMascota = nombreMascota;
-        this.NumeroCita = NumeroCita;
-        this.Enfermedad = Enfermedad;
-        this.Pago = Pago;
-        this.Fecha = Fecha;
-    }
-   
-   
-  
-    
-    //INSERTAR CONSTRUCTOR}
-
-    /**
-     * @return the nombreMascota
-     */
     public String getNombreMascota() {
         return nombreMascota;
     }
 
-    /**
-     * @param nombreMascota the nombreMascota to set
-     */
     public void setNombreMascota(String nombreMascota) {
         this.nombreMascota = nombreMascota;
     }
 
-    /**
-     * @return the NumeroCita
-     */
-    public int getNumeroCita() {
-        return NumeroCita;
+    public String getCliente() {
+        return Cliente;
     }
 
-    /**
-     * @param NumeroCita the NumeroCita to set
-     */
-    public void setNumeroCita(int NumeroCita) {
-        this.NumeroCita = NumeroCita;
+    public void setCliente(String Cliente) {
+        this.Cliente = Cliente;
     }
 
-    /**
-     * @return the Enfermedad
-     */
-    public String getEnfermedad() {
-        return Enfermedad;
+    public String getDNI() {
+        return DNI;
     }
 
-    /**
-     * @param Enfermedad the Enfermedad to set
-     */
-    public void setEnfermedad(String Enfermedad) {
-        this.Enfermedad = Enfermedad;
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
     }
 
-    /**
-     * @return the Pago
-     */
-    public String getPago() {
-        return Pago;
+    public String getDiaDeCita() {
+        return DiaDeCita;
     }
 
-    /**
-     * @param Pago the Pago to set
-     */
-    public void setPago(String Pago) {
-        this.Pago = Pago;
+    public void setDiaDeCita(String DiaDeCita) {
+        this.DiaDeCita = DiaDeCita;
     }
 
-    /**
-     * @return the Fecha
-     */
-    public int getFecha() {
-        return Fecha;
+    public String getHoraDeCita() {
+        return HoraDeCita;
     }
 
-    /**
-     * @param Fecha the Fecha to set
-     */
-    public void setFecha(int Fecha) {
-        this.Fecha = Fecha;
+    public void setHoraDeCita(String HoraDeCita) {
+        this.HoraDeCita = HoraDeCita;
     }
+
+    public String getEspecieMascota() {
+        return EspecieMascota;
+    }
+
+    public void setEspecieMascota(String EspecieMascota) {
+        this.EspecieMascota = EspecieMascota;
+    }
+    
+    
+    
 }

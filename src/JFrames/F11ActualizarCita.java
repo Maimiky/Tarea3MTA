@@ -44,6 +44,10 @@ public class F11ActualizarCita extends javax.swing.JInternalFrame {
         btnActualizar = new javax.swing.JButton();
         btnInsertar = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         txtArea.setColumns(20);
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);
@@ -80,7 +84,7 @@ public class F11ActualizarCita extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizar)
                     .addComponent(btnInsertar))
@@ -109,7 +113,7 @@ public class F11ActualizarCita extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-File archivo = new File("C:\\Users\\-Katerin-\\Desktop\\ORIGINAL\\Tarea3MTA\\src\\RegistroCitas\\Citas.txt");
+File archivo = new File("C:\\Users\\Lenovo\\Desktop\\Tarea3MTA\\src\\RegistroCitas\\Citas.txt");
         try {
             BufferedReader leer = new BufferedReader(new FileReader(archivo));
           String linea = leer.readLine();
@@ -127,7 +131,7 @@ File archivo = new File("C:\\Users\\-Katerin-\\Desktop\\ORIGINAL\\Tarea3MTA\\src
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
     try {
-            FileWriter permitirEscrito = new FileWriter("C:\\Users\\-Katerin-\\Desktop\\ORIGINAL\\Tarea3MTA\\src\\RegistroCitas\\Citas.txt");
+            FileWriter permitirEscrito = new FileWriter("C:\\Users\\Lenovo\\Desktop\\Tarea3MTA\\src\\RegistroCitas\\Citas.txt");
             
             String texto = txtArea.getText().replace("\n","\r\n");
             PrintWriter imprime = new PrintWriter(permitirEscrito);

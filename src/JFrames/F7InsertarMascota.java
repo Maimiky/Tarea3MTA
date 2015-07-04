@@ -58,7 +58,7 @@ public class F7InsertarMascota extends javax.swing.JInternalFrame {
         txtMascota = new javax.swing.JTextField();
         txtRaza = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        btnInsertarCitas = new javax.swing.JButton();
+        btnRegistrarCitas = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -139,10 +139,10 @@ public class F7InsertarMascota extends javax.swing.JInternalFrame {
             }
         });
 
-        btnInsertarCitas.setText("Insertar Citas");
-        btnInsertarCitas.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarCitas.setText("Registrar Citas");
+        btnRegistrarCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertarCitasActionPerformed(evt);
+                btnRegistrarCitasActionPerformed(evt);
             }
         });
 
@@ -171,7 +171,7 @@ public class F7InsertarMascota extends javax.swing.JInternalFrame {
                                     .addGap(20, 20, 20)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnInsertarCitas))
+                                    .addComponent(btnRegistrarCitas))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -227,7 +227,7 @@ public class F7InsertarMascota extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsertarCitas))
+                    .addComponent(btnRegistrarCitas))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,7 +256,7 @@ public class F7InsertarMascota extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtClienteActionPerformed
 
     private void btnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrabarActionPerformed
-       ArrayList<Mascota> listado2= PersistenciaMascota.LoadData();
+        ArrayList<Mascota> listado2= PersistenciaMascota.LoadData();
         Mascota m = new Mascota();
         m.setNombreClient(txtCliente.getText());
         m.setDni(txtDni.getText());
@@ -319,11 +319,11 @@ void LLenarJTable(){
          y.setVisible(true);   
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnInsertarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarCitasActionPerformed
+    private void btnRegistrarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCitasActionPerformed
  int selec = tblMascota.getSelectedRow();//get para obte   
  if(selec >= 0){
      
-     F11ActualizarCita f10 = new F11ActualizarCita();
+     F10RegistrarCita f10 = new F10RegistrarCita();
      F2SistemaVeterinaria.Escritorio.add(f10);
             f10.toFront();//para mostrarse al frente de insertarMascota
             f10.setVisible(true);
@@ -331,12 +331,12 @@ void LLenarJTable(){
  }
   
         
-    }//GEN-LAST:event_btnInsertarCitasActionPerformed
+    }//GEN-LAST:event_btnRegistrarCitasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGrabar;
-    private javax.swing.JButton btnInsertarCitas;
+    private javax.swing.JButton btnRegistrarCitas;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox cbSexo;
     private javax.swing.JButton jButton1;
@@ -353,7 +353,7 @@ void LLenarJTable(){
     private javax.swing.JTextField txtCliente;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtDni;
-    private javax.swing.JTextField txtMascota;
+    public static javax.swing.JTextField txtMascota;
     private javax.swing.JTextField txtPeso;
     private javax.swing.JTextField txtRaza;
     // End of variables declaration//GEN-END:variables

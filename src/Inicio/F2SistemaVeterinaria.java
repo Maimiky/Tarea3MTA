@@ -8,6 +8,8 @@ package Inicio;
 
 
 import Clases.ConsultarPersona;
+import JFrames.F10RegistrarCita;
+import JFrames.F12ConsultarCita;
 import JFrames.F1InsertarCliente;
 import JFrames.F2EliminarCliente;
 import JFrames.F3consultarCliente;
@@ -228,7 +230,7 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
         jMenu12.setText("CITAS                            ");
 
         InsertarCitas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
-        InsertarCitas.setText("INSERTAR CITAS");
+        InsertarCitas.setText("REGISTRAR CITAS");
         InsertarCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InsertarCitasActionPerformed(evt);
@@ -242,6 +244,11 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
 
         ConsultarCitas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         ConsultarCitas.setText("CONSULTAR CITAS");
+        ConsultarCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarCitasActionPerformed(evt);
+            }
+        });
         jMenu12.add(ConsultarCitas);
 
         jMenuBar1.add(jMenu12);
@@ -371,7 +378,10 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarAnimalActionPerformed
 
     private void InsertarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarCitasActionPerformed
-   
+    F10RegistrarCita f10 = new  F10RegistrarCita();
+    f10.setVisible(true);// para comprovar el acceso al jframe seleccionado y entrar
+        Escritorio.add(f10);
+        
     }//GEN-LAST:event_InsertarCitasActionPerformed
 
     private void InsertarFechaVacunacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarFechaVacunacionActionPerformed
@@ -380,6 +390,13 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
      
      
     }//GEN-LAST:event_InsertarFechaVacunacionActionPerformed
+
+    private void ConsultarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarCitasActionPerformed
+    F12ConsultarCita f12 = new F12ConsultarCita();
+    f12.setVisible(true);
+    Escritorio.add(f12);
+    
+    }//GEN-LAST:event_ConsultarCitasActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,7 +21,7 @@ DefaultListModel listModel = new DefaultListModel();
     public F3consultarCliente() {
         initComponents();
             tblTabla.getColumnCount();
-  modelo = (DefaultTableModel) tblTabla.getModel();
+            modelo = (DefaultTableModel) tblTabla.getModel();
     }
 
     /**
@@ -55,6 +55,10 @@ DefaultListModel listModel = new DefaultListModel();
         tblTabla = new javax.swing.JTable();
         txtMotivo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
