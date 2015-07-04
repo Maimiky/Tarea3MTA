@@ -360,7 +360,8 @@ public class F2SistemaVeterinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarPersonaActionPerformed
 
     private void ConsultarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarPersonaActionPerformed
-   
+      F10ConsultarPersona f10=new  F10ConsultarPersona(); 
+      f10.setVisible(true);
     }//GEN-LAST:event_ConsultarPersonaActionPerformed
 
     private void EliminarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarAnimalActionPerformed
