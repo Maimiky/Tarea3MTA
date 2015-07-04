@@ -134,7 +134,7 @@ File archivo = new File("C:\\Users\\-Katerin-\\Desktop\\ORIGINAL\\Tarea3MTA\\src
             imprime.print(texto);
             permitirEscrito.close();
             
-            JOptionPane.showMessageDialog(null,"texto de Jim guardado TAREITA JAVITA");
+            JOptionPane.showMessageDialog(null,"Archivo Guardado CORRECTAMENTE");
             
         } catch (Exception ex) {
             Logger.getLogger(F11ActualizarCita.class.getName()).log(Level.SEVERE, null, ex);
